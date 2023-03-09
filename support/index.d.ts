@@ -270,6 +270,12 @@ declare namespace Cypress {
       dontWaitAfterConnect?: boolean;
     }): Chainable<Subject>;
     /**
+     * Cancel MetaMask access request
+     * @example
+     * cy.cancelMetamaskAccess()
+     */
+    cancelMetamaskAccess(): Chainable<Subject>;
+    /**
      * Confirm metamask transaction (auto-detects eip-1559 and legacy transactions)
      * @example
      * cy.confirmMetamaskTransaction()
