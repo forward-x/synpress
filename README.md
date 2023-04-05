@@ -63,22 +63,6 @@ more details.
 
 # Table of content
 
-- [🖥️ Install](#%EF%B8%8F-install)
-- [⚙️ Supported frameworks](#%EF%B8%8F-supported-frameworks)
-- [👝 Supported wallets](#-supported-wallets)
-- [✍️ Usage examples](#%EF%B8%8F-usage-examples)
-- [🌟 Features](#-features)
-- [👷 Example setup for eslint and tsconfig](#-example-setup-for-eslint-and-tsconfig)
-- [⚡ Important notes](#-important-notes)
-- [🐳 Synpress + Docker](#-using-with-docker)
-- [💁‍♂️ CI tips & tricks](#%EF%B8%8F-ci-tips--tricks)
-- [🧪 CLI](#-usage--commands)
-- [📃 Environmental variables](#-environmental-variables)
-- [🚢 Release process](#-release-process)
-- [📝 More resources](#-more-resources)
-
-## ⚙️ Supported frameworks
-
 - [Synpress](https://github.com/Synthetixio/synpress)
 - [Playwright](https://playwright.dev/) (as a plugin)
 - [Cypress](https://github.com/cypress-io/cypress) (as a plugin)
@@ -89,13 +73,12 @@ more details.
 
 ## ✍️ Usage examples:
 
-- [⭐ Synpress examples](https://github.com/drptbl/synpress-examples/)
-- [Synpress e2e tests](https://github.com/Synthetixio/synpress/tree/dev/tests/e2e)
-
----
-
-For full Synpress commands and their examples,
-[check here](https://github.com/Synthetixio/synpress/blob/dev/docs/synpress-commands.md).
+- [Synpress Examples](https://github.com/drptbl/synpress-examples/)
+- [Synpress E2E Tests](https://github.com/Synthetixio/synpress/tree/dev/tests/e2e)
+  on [MetaMask/test-dapp](https://github.com/MetaMask/test-dapp) —
+  [github.io/test-dapp/](https://metamask.github.io/test-dapp/)
+- For full Synpress commands and their examples,
+  [check here](https://github.com/Synthetixio/synpress/blob/dev/docs/synpress-commands.md).
 
 To see in which direction Synpress is headed to, take a look at
 [planning board](https://github.com/orgs/Synthetixio/projects/14).
@@ -357,20 +340,20 @@ All examples of setup are present in this repository. Just take a look around.
 
 ## 💁‍♂️ CI tips & tricks
 
-- check out many different
+- Check out many different
   [examples in this repository](https://github.com/Synthetixio/synpress/tree/dev/.github/workflows):
   - [e2e_headful.yml](https://github.com/Synthetixio/synpress/blob/dev/.github/workflows/e2e_headful.yml)
-    => runs on `ubuntu-latest`.
+    ➡ Runs on `ubuntu-latest`.
   - [e2e_debug.yml](https://github.com/Synthetixio/synpress/blob/dev/.github/workflows/e2e_debug.yml)
-    => runs on `ubuntu-latest`, has configured VNC, noVNC and ngrok for easy
+    ➡ Runs on `ubuntu-latest`, has configured VNC, noVNC and ngrok for easy
     debugging.
   - [e2e_docker.yml](https://github.com/Synthetixio/synpress/blob/dev/.github/workflows/e2e_docker.yml)
-    => runs on `ubuntu-latest` with `docker compose` stack.
+    ➡ Runs on `ubuntu-latest` with `docker compose` stack.
   - [e2e_cypress-action.yml](https://github.com/Synthetixio/synpress/blob/dev/.github/workflows/e2e_cypress-action.yml)
-    => runs on `ubuntu-latest`, using official
+    ➡ Runs on `ubuntu-latest`, using official
     [cypress-io/github-action](https://github.com/cypress-io/github-action).
-- use [docker-e2e](https://github.com/Synthetixio/docker-e2e)
-- synpress is tested and should work on all resolutions, starting from 800x600
+- Use [docker-e2e](https://github.com/Synthetixio/docker-e2e)
+- Synpress is tested and should work on all resolutions, starting from 800x600
 
 ## 🧪 Usage & commands
 
