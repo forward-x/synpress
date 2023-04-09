@@ -61,16 +61,20 @@ it directly. Check
 [usage examples](https://github.com/Synthetixio/synpress/#usage-examples) for
 more details.
 
-## Install
+# Table Of Content
 
-```bash
-# with pnpm
-pnpm add --save-dev @synthetixio/synpress
-# with npm
-npm install --save-dev @synthetixio/synpress
-# with yarn
-yarn add -D @synthetixio/synpress
-```
+- [Supported frameworks](#supported-frameworks)
+- [Supported wallets](#supported-wallets)
+- [Usage examples](#usage-examples)
+- [Features](#features)
+- [Example setup for eslint and tsconfig](#👷-example-setup-for-eslint-and-tsconfig)
+- [Important notes](#⚡-important)
+- [Synpress + Docker](#🐳-using-with-docker)
+- [CI tips & tricks](#ci-tips--tricks)
+- [CLI Usages](#🧪-usage)
+- [Environmental variables](#environmental-variables)
+- [Release process](#🚢-release-process)
+- [More resources](#📃-more-resources)
 
 ## Supported frameworks
 
@@ -84,8 +88,8 @@ yarn add -D @synthetixio/synpress
 
 ## Usage examples:
 
-- ⭐ [synpress-examples](https://github.com/drptbl/synpress-examples/)
-- [synpress](https://github.com/Synthetixio/synpress/tree/dev/tests/e2e)
+- [Synpress Examples](https://github.com/drptbl/synpress-examples/)
+- [Synpress E2E Tests](https://github.com/Synthetixio/synpress/tree/dev/tests/e2e)
 
 ---
 
