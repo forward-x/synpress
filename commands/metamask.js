@@ -818,7 +818,20 @@ const metamask = {
       notificationPage,
       { waitForEvent: 'navi' },
     );
+
     if (options && options.signInSignature) {
+      log(
+        [
+          '[deprecation-warning]: `options.signInSignature` is no longer used will be deprecated soon',
+          'Use `options.confirmSignatureRequest` or `options.confirmDataSignatureRequest`',
+        ].join('\n'),
+      );
+    }
+
+    if (
+      options &&
+      (options.signInSignature || options.confirmSignatureRequest)
+    ) {
       await playwright.waitAndClick(
         permissionsPageElements.connectButton,
         notificationPage,
@@ -838,7 +851,24 @@ const metamask = {
           { waitForEvent: 'close' },
         );
       }
+      return true;
     }
+
+    if (options && options.confirmDataSignatureRequest) {
+      await playwright.waitAndClick(
+        permissionsPageElements.connectButton,
+        notificationPage,
+        { waitForEvent: 'navi' },
+      );
+      await module.exports.confirmDataSignatureRequest();
+      return true;
+    }
+
+    await playwright.waitAndClick(
+      permissionsPageElements.connectButton,
+      notificationPage,
+      { waitForEvent: 'close' },
+    );
     return true;
   },
   async cancelAccessRequest() {
