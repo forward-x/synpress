@@ -262,12 +262,14 @@ declare namespace Cypress {
      * Accept metamask access request
      * @example
      * cy.acceptMetamaskAccess()
-     * cy.acceptMetamaskAccess({allAccounts: true, signInSignature: true})
+     * cy.acceptMetamaskAccess({allAccounts: true, confirmSignatureRequest: true})
      */
     acceptMetamaskAccess(options?: {
       allAccounts?: boolean;
       signInSignature?: boolean;
       dontWaitAfterConnect?: boolean;
+      confirmSignatureRequest?: boolean;
+      confirmDataSignatureRequest?: boolean;
     }): Chainable<Subject>;
     /**
      * Cancel MetaMask access request
