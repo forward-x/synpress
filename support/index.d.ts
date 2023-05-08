@@ -261,6 +261,7 @@ declare namespace Cypress {
     acceptMetamaskAccess(options?: {
       allAccounts?: boolean;
       signInSignature?: boolean;
+      dontWaitAfterConnect?: boolean;
     }): Chainable<Subject>;
     /**
      * Confirm metamask transaction (auto-detects eip-1559 and legacy transactions)

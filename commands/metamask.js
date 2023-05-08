@@ -825,11 +825,18 @@ const metamask = {
       );
       await module.exports.confirmSignatureRequest();
     } else {
-      await playwright.waitAndClick(
-        permissionsPageElements.connectButton,
-        notificationPage,
-        { waitForEvent: 'close' },
-      );
+      if (options && options.dontWaitAfterConnect) {
+        await playwright.waitAndClick(
+          permissionsPageElements.connectButton,
+          notificationPage,
+        );
+      } else {
+        await playwright.waitAndClick(
+          permissionsPageElements.connectButton,
+          notificationPage,
+          { waitForEvent: 'close' },
+        );
+      }
     }
     return true;
   },
