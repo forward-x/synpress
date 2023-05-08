@@ -305,6 +305,7 @@ declare namespace Cypress {
       dontWaitAfterConnect?: boolean;
       confirmSignatureRequest?: boolean;
       confirmDataSignatureRequest?: boolean;
+      dontWaitAfterConnect?: boolean;
     }): Chainable<boolean>;
     /**
      * Reject metamask access request

@@ -898,6 +898,14 @@ const metamask = {
       return true;
     }
 
+    if (options && options.dontWaitAfterConnect) {
+      await playwright.waitAndClick(
+        permissionsPageElements.connectButton,
+        notificationPage,
+      );
+      return true;
+    }
+
     if (options && options.confirmDataSignatureRequest) {
       await playwright.waitAndClick(
         permissionsPageElements.connectButton,
