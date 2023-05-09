@@ -1174,7 +1174,7 @@ const metamask = {
     );
     await playwright.waitAndClick(mainPageElements.accountModal.closeButton);
     await switchToCypressIfNotActive();
-    return walletNativeBalancewalletNativeBalance;
+    return walletNativeBalance;
   },
   async initialSetup(
     playwrightInstance,
