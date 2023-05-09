@@ -1169,6 +1169,7 @@ const metamask = {
     await playwright.waitAndClick(
       mainPageElements.optionsMenu.accountDetailsButton,
     );
+    await playwright.waitUntilMetamaskWindowIsStable();
     walletNativeBalance = await playwright.waitAndGetValue(
       mainPageElements.accountModal.walletNativeBalance,
     );
