@@ -97,6 +97,12 @@ declare namespace Cypress {
      */
     getMetamaskWalletAddress(): Chainable<Subject>;
     /**
+     * Get current wallet balance of native token
+     * @example
+     * cy.getMetamaskWalletNativeBalance().then(address => cy.log(address))
+     */
+    getMetamaskWalletNativeBalance(): Chainable<Subject>;
+    /**
      * Activate ability (in metamask settings) to specify custom gas price and limit while doing transactions in metamask
      * @example
      * cy.activateAdvancedGasControlInMetamask()

@@ -45,6 +45,7 @@ let extensionNewAccountUrl;
 let extensionImportAccountUrl;
 let extensionImportTokenUrl;
 let walletAddress;
+let walletNativeBalance;
 let switchBackToCypressWindow;
 
 const metamask = {
@@ -1161,6 +1162,19 @@ const metamask = {
     await playwright.waitAndClick(mainPageElements.accountModal.closeButton);
     await switchToCypressIfNotActive();
     return walletAddress;
+  },
+  async getWalletNativeBalance() {
+    await switchToMetamaskIfNotActive();
+    await playwright.waitAndClick(mainPageElements.optionsMenu.button);
+    await playwright.waitAndClick(
+      mainPageElements.optionsMenu.accountDetailsButton,
+    );
+    walletNativeBalance = await playwright.waitAndGetValue(
+      mainPageElements.accountModal.walletNativeBalance,
+    );
+    await playwright.waitAndClick(mainPageElements.accountModal.closeButton);
+    await switchToCypressIfNotActive();
+    return walletNativeBalancewalletNativeBalance;
   },
   async initialSetup(
     playwrightInstance,

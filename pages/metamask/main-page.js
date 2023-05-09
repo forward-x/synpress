@@ -86,6 +86,7 @@ const connectedSites = {
 
 const accountModal = {
   walletAddressInput: '.account-modal .qr-code__address',
+  walletNativeBalance: '.currency-display-component__text',
   closeButton: '.account-modal__close',
 };
 

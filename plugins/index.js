@@ -254,6 +254,10 @@ module.exports = (on, config) => {
       const walletAddress = await metamask.getWalletAddress();
       return walletAddress;
     },
+    getMetamaskWalletNativeBalance: async () => {
+      const nativeBalance = await metamask.getWalletNativeBalance();
+      return nativeBalance;
+    },
     fetchMetamaskWalletAddress: async () => {
       return metamask.walletAddress();
     },

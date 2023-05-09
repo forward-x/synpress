@@ -64,6 +64,14 @@ Cypress.Commands.add('getMetamaskWalletAddress', () => {
 });
 
 Cypress.Commands.add(
+  'getMetamaskWalletNativeBalance', () => {
+    cy.task('getMetamaskWalletNativeBalance').then(balance => {
+      return balance;
+    });
+  }
+)
+
+Cypress.Commands.add(
   'activateAdvancedGasControlInMetamask',
   (skipSetup = false) => {
     return cy.task('activateAdvancedGasControlInMetamask', skipSetup);
