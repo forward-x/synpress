@@ -261,8 +261,8 @@ Cypress.Commands.add(
   },
 );
 
-Cypress.Commands.add('getNetwork', () => {
-  return cy.task('getNetwork');
+Cypress.Commands.add('getCurrentNetwork', () => {
+  return cy.task('getCurrentNetwork');
 });
 
 // Etherscan commands

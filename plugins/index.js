@@ -291,8 +291,8 @@ module.exports = (on, config) => {
       });
       return true;
     },
-    getNetwork: () => {
-      const network = helpers.getNetwork();
+    getCurrentNetwork: () => {
+      const network = helpers.getCurrentNetwork();
       return network;
     },
     etherscanGetTransactionStatus: async ({ txid }) => {
