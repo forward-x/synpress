@@ -8,9 +8,11 @@ const packageJson = require('./package.json');
 const chains = require('viem/chains');
 
 let currentNetwork = chains.mainnet;
+// list of added networks to metamask
 let addedNetworks = [chains.mainnet, chains.goerli, chains.sepolia];
 
 module.exports = {
+  // set currently active network
   async setNetwork(network) {
     log(`Setting network to ${JSON.stringify(network)}`);
 
@@ -50,6 +52,7 @@ module.exports = {
     }
     currentNetwork = network;
   },
+  // find network in presets
   async findNetwork(network) {
     if (typeof network === 'object') {
       network = network.name || network.network;
@@ -101,6 +104,7 @@ module.exports = {
 
     return chain;
   },
+  // get currently active network
   getCurrentNetwork() {
     log(
       `[getCurrentNetwork] Current network data: ${JSON.stringify(
@@ -109,6 +113,7 @@ module.exports = {
     );
     return currentNetwork;
   },
+  // add new network to presets and list of metamask networks
   async addNetwork(newNetwork) {
     if (!newNetwork.network) {
       newNetwork.network = newNetwork.name.toLowerCase().replace(' ', '-');
@@ -118,6 +123,7 @@ module.exports = {
     chains[newNetwork.network] = newNetwork;
     addedNetworks.push(newNetwork);
   },
+  // check if network is already added to metamask
   async checkNetworkAdded(network) {
     log(
       `[checkNetworkAdded] Checking if network is already added: ${JSON.stringify(
