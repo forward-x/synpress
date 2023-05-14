@@ -192,8 +192,8 @@ Cypress.Commands.add('acceptMetamaskAccess', options => {
   return cy.task('acceptMetamaskAccess', options);
 });
 
-Cypress.Commands.add('cancelMetamaskAccess', () => {
-  return cy.task('cancelMetamaskAccess');
+Cypress.Commands.add('rejectMetamaskAccess', () => {
+  return cy.task('rejectMetamaskAccess');
 });
 
 Cypress.Commands.add('confirmMetamaskTransaction', gasConfig => {
