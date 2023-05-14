@@ -339,12 +339,10 @@ const metamask = {
     return true;
   },
   async createAccount(accountName) {
-    if (accountName) {
-      accountName = accountName.toLowerCase();
-    }
     await switchToMetamaskIfNotActive();
     await module.exports.goToNewAccount();
     if (accountName) {
+      accountName = accountName.toLowerCase();
       await playwright.waitAndType(
         mainPageElements.createAccount.input,
         accountName,
@@ -357,7 +355,7 @@ const metamask = {
     const accountExists = 'This account name already exists' === formErrorTxt;
 
     if (accountExists) {
-      log(`[error] ${formErrorTxt}`);
+      log(`[createAccount] ${formErrorTxt}`);
       await playwright.waitAndClick(
         mainPageElements.createAccount.cancelButton,
       );
