@@ -915,7 +915,7 @@ const metamask = {
     );
     return true;
   },
-  async cancelAccessRequest() {
+  async rejectAccess() {
     const notificationPage = await playwright.switchToMetamaskNotification();
     await playwright.waitAndClick(
       notificationPageElements.cancelButton,
