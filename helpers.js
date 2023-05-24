@@ -17,41 +17,6 @@ module.exports = {
   // set currently active network
   async setNetwork(network) {
     log(`Setting network to ${JSON.stringify(network)}`);
-
-    if (Object.keys(PRESET_NETWORKS).includes(network)) {
-      selectedNetwork = PRESET_NETWORKS[network];
-      return;
-    }
-
-    if (network === 'localhost') {
-      const provider = new ethers.JsonRpcProvider('http://127.0.0.1:8545');
-      const { chainId, name } = await provider.getNetwork();
-      selectedNetwork = {
-        networkName: name.toLowerCase(),
-        networkDisplayName: name,
-        networkId: Number(chainId),
-        isTestnet: true,
-      };
-      ADDED_NETWORKS[name] = selectedNetwork;
-      return;
-    }
-
-    if (typeof network === 'object') {
-      selectedNetwork = {
-        networkName: network.networkName.toLowerCase(),
-        networkDisplayName: network.networkName,
-        networkId: Number(network.chainId),
-        isTestnet: network.isTestnet,
-      };
-      ADDED_NETWORKS[network.networkName] = selectedNetwork;
-      return;
-    }
-
-    if (typeof network === 'string') {
-      const addedNetwork = ADDED_NETWORKS[network.toLowerCase()];
-      if (!addedNetwork) throw new Error('Network not found');
-      selectedNetwork = addedNetwork;
-    }
     currentNetwork = network;
   },
   // find network in presets
